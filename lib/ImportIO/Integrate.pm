@@ -48,11 +48,11 @@ has ua_headers => (
 );
 
 has last_query_response => (
-	is => 'rwp'
+    is => 'rwp'
 );
 
 has last_query_error => (
-	is => 'rwp'
+    is => 'rwp'
 );
 
 sub live_extractor_query {
@@ -125,8 +125,8 @@ sub generate_rss_url {
 }
 
 sub _generate_live_url {
-	my $self = shift;
-	my $uri_encoder = URI::Encode->new();
+    my $self = shift;
+    my $uri_encoder = URI::Encode->new();
 
     my $url = 'https://extraction.import.io/query/extractor/' .
               $self->extractor_id .
