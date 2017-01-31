@@ -170,4 +170,46 @@ sub _query {
     return $content_decoded;
 }
 
+=head1 NAME
+
+=head1 SYNOPSIS
+
+    use ImportIO::Integrate;
+
+    my $importio = ImportIO::Integrate->new({
+        api_key       => 'IMPORTIO_API_KEY'
+        extractor_id  => 'IMPORTIO_EXTRACTOR_ID'
+        target_url    => 'http://example.org' # Optional param, but required for the live_extractor_query method to succeed.
+    });
+
+    my $scraped_data = $importio->live_extractor_query;
+
+=head1 DESCRIPTION
+
+	Module to interface with the integration capabilites of ImportIO's free version of their API.  
+
+=head2 METHODS
+
+=item C<live_extractor_query>
+
+	Execute a live query of the target URL using the settings within the given extractor ID.
+
+=item C<last_run_csv_query>
+
+	Return the data from the latest query on the given extractor ID in CSV format.
+
+=item C<last_run_json_query>
+
+	Return the data from the latest query on the given extractor ID in JSON format.
+
+=item C<get_google_sheets_formula>
+
+	Generate and return a formula to be used within Google sheets.
+
+=item C<generate_rss_url>
+
+	Generate and return a RSS feed URL.
+
+=cut
+
 1;
